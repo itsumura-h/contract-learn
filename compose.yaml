@@ -1,0 +1,11 @@
+version: '3'
+services:
+  contract:
+      build:
+        context: .
+        dockerfile: ./docker/contract/local.Dockerfile
+      tty: true
+      ports:
+        - 8545:8545
+      volumes:
+        - .:/root/project
