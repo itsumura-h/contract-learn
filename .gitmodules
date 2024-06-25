@@ -4,3 +4,6 @@
 [submodule "projects/erc20/lib/forge-std"]
 	path = projects/erc20/lib/forge-std
 	url = https://github.com/foundry-rs/forge-std
+[submodule "projects/proxy-coin/lib/forge-std"]
+	path = projects/proxy-coin/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std

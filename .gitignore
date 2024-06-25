@@ -1,5 +1,5 @@
 .pnpm-store
-./src/lib
+lib
 foundry.toml 
 artifacts
 cache
