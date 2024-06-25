@@ -1,3 +1,6 @@
 .pnpm-store
 ./src/lib
 foundry.toml 
+artifacts
+cache
+node_modules

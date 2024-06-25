@@ -12,9 +12,6 @@ async function main() {
   await coin.write.transfer([alice.account.address, parseEther("1000")]);
   const aliceBalance = await coin.read.balanceOf([alice.account.address]);
   console.log("Alice balance:", aliceBalance.toString());
-
-  balance = await coin.read.balanceOf([minter.account.address]);
-  console.log("Minter balance:", balance.toString());
 }
 
 
