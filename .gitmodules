@@ -7,3 +7,6 @@
 [submodule "projects/proxy-coin/lib/forge-std"]
 	path = projects/proxy-coin/lib/forge-std
 	url = https://github.com/foundry-rs/forge-std
+[submodule "projects/Lock/lib/forge-std"]
+	path = projects/Lock/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std

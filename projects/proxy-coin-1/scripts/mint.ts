@@ -1,18 +1,17 @@
 import hre from "hardhat"
-import {ethers, upgrades} from "hardhat"
+import FiatTokenV1Abi from "../artifacts/contracts/FiatTokenV1/FiatTokenV1.sol/FiatTokenV1.json"
 
 async function main() {
-  const FiatTokenFactory = await ethers.getContractFactory("FiatTokenV1")
-  const FiatTokenV1 = await upgrades.deployProxy(FiatTokenFactory)
-  await FiatTokenV1.waitForDeployment()
-  const FiatTokenProxyAddress = await FiatTokenV1.getAddress()
-  console.log(FiatTokenProxyAddress)
+  console.log("=== deploy")
+  const [deployer] = await hre.viem.getWalletClients()
+  // console.log({deployer})
 
-  // upgrade
-  const FiatTokenV1_1Factory = await ethers.getContractFactory("FiatTokenV1_1")
-  const FiatTokenV1_1 = await upgrades.upgradeProxy(FiatTokenProxyAddress, FiatTokenV1_1Factory)
-  const FiatTokenV1_1Address = await FiatTokenV1_1.getAddress()
-  console.log(FiatTokenProxyAddress == FiatTokenV1_1Address)
+  const fiatTokenV1Factory = await hre.viem.deployContract("FiatTokenV1")
+  console.log({fiatTokenV1Factory})
+  await fiatTokenV1Factory.read.proxiableUUID
+  // await fiatTokenV1Factory.write.
+
+  // const fiatTokenV1Factory = await deployer.deployContract("FiatTokenV1", [])
 }
 
 main().catch(error=>{
