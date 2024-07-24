@@ -1,0 +1,16 @@
+{
+  "semi": false,
+  "singleQuote": true,
+  "useTabs": true,
+  "plugins": ["prettier-plugin-solidity"],
+  "trailingComma": "all",
+  "printWidth": 80,
+  "overrides": [
+    {
+      "files": ["*.sol"],
+      "options": {
+        "singleQuote": false
+      }
+    }
+  ]
+}
